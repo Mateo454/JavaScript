@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nuevos tipos de datos en JavaScript</h1>
+    <script>
+        let id="Hola";
+        let id2="Hola";
+
+        //Al comparar estos string  los refiere como igual
+
+        let id3=Symbol('id3');
+        let id4=Symbol('id4');
+        //Al comparar esto se genera un identificador unico
+        console.log(id===id2);
+        console.log(id3===id4);
+
+        const NOMBRE=Symbol();
+
+        const persona ={ 
+            [NOMBRE]:"jon"
+        }
+        //TIPO SET 
+        const set = new Set([1,2,3,3,4,5,true,false,false,{},{},"hola","HOla"]);//Para enviarle los valores de una vez, es como un vector unico7
+        console.log(set);
+        console.log(set.size);
+
+        const set2 = new Set();
+        set2.add(1);
+        set2.add(2);
+        set2.add(2);
+        set2.add(3);//el set añade, sin repetir valores
+        
+
+        //Tipo map 
+        
+        const mapa = new Map();
+
+        mapa.set('nombre','Mateo');
+        mapa.set('apellido','Marin');
+        mapa.set('edad',25);
+
+        for ( let [key,value]of mapa){
+            console.log(`llave ${key} valor: ${value}`);
+        }
+
+        //WeakSets & WeakMaps SON TIPOS SETS Y MAPS QUE RECIBEN DATOS DEBILES QUE SIGNIFICAN SER DE TIPO OBJETO
+        //HACE QUE EL RECOLECTOR DE BASURA ELIMINE LAS REFERENCIAS NULAS, VACIAS O DEBILES.
+        //NO SON ITERABLES 
+
+
+        //iterables
+
+        const iterable =[1,2,3,4,5];
+        //Acceder al iterador del iterable
+        const iterador = iterable[Symbol.iterator]();
+        console.log(iterable);
+        console.log(iterador);
+        console.log(iterador.next());
+        console.log(iterador.next());
+        console.log(iterador.next());
+        console.log(iterador.next());
+        console.log(iterador.next());
+        console.log(iterador.next());
+
+        // or 
+
+        let next = iterador.next();
+        
+        
+        while(!next.done){
+            console.log(next.value);
+            next = iterador.next();
+        };
+
+        //dinamica 
+
+        const objUsuario = {
+            propiedad:'Valor',
+            [`id_$(;ath.round(Math.random()*100+5)`]:'Valor Aleatorio'
+        };
+
+
+        const usuarios = ['mateo','camila','dante','jon'];
+        usuarios.forEach((usuario,index) => objUsuarios[`id_${index}`]= usuarios);
+
+        //this
+
+        this.lugar = 'Contexto global';
+
+        function saludar(saludo, aQuien){
+            console.log(`${saludo} ${aQuien} Desde el ${this.lugar} `);
+        }
+        saludar("Hola","Dante");
+
+        const obj={
+            lugar:"Contexto Objeto"
+        };
+
+        saludar.call(obj,"Hola","Mateo");//Llamar el contexto lugar
+        saludar.call(null,"Hola","Mateo");
+        saludar.call(this,"Hola","Mateo");
+        saludar.apply(obj,["Adios","Marin"]);//alternativa de call
+        saludar.apply(null,["Adios","Marin"]);
+        saludar.apply(this,["Adios","Marin"]);
+
+        const personas ={
+            nombre:"Mateo",
+            saludar:function()
+            {
+            console.log(`Hola ${this.nombre}`)
+            }
+        }
+
+        const otraPersona ={
+            saludar:personas.saludar.bind(personas)//bind es para enlazar propiedades de los objetos para manejarlos desde un contexto externo
+        }
+
+        otraPersona.saludar();
+        personas.saludar();
+
+
+        //Formato JSON
+
+        const json={
+            cadena:"Mateo",
+            numero:25,
+            Boolean:true,
+            arreglo:["correr","programar","cocinar"],
+            objeto:{
+                twiter:"@MateoM",
+                email:"teomarin97@gmail.com"
+            },
+            nulo:null
+        }
+
+        console.log(json);
+        //Metodo parse
+        console.log(JSON);
+        console.log(JSON.parse("{}"));//EL PARSE LO QUE HACE ES IDENTIFICAR Y TRANSFORMAR LO INGRESADO PARA QUE JS LO RECONOZCA ESTO LO RECONOCE COMO OBJETO    
+        console.log(JSON.parse("[1,2,3]"));//Se reconoce como vector
+        console.log(JSON.parse("true"))//lo reconoce como boolean o como lo que ingrese valido para JS string, number, obj, vector..
+        //metodo stringify convierte la notacion JSON en cadena de texto
+        console.log(JSON.stringify({}));
+        console.log(JSON.stringify([1,2,3]));
+        console.log(JSON.stringify(true));
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,65 @@
+{
+  "libros": [
+    {
+      "id": 1,
+      "nombre": "La odisea",
+      "autor": "Homero"
+    },
+    {
+      "id": 2,
+      "nombre": "La divina comedia",
+      "autor": "Dante Alighieri"
+    },
+    {
+      "id": 3,
+      "nombre": "Dracula",
+      "autor": "Bram Stoker"
+    },
+    {
+      "id": 4,
+      "nombre": "MovieDick",
+      "autor": "Herman Melvie"
+    },
+    {
+      "id": 5,
+      "nombre": "franckenstain",
+      "autor": "Mary Shelley"
+    },
+    {
+      "id": 6
+    }
+  ],
+  "Dioses": [
+    {
+      "id": 1,
+      "nombre": "Athenea",
+      "de": "Tierra"
+    },
+    {
+      "id": 2,
+      "nombre": "Zeus",
+      "de": "Cielo"
+    },
+    {
+      "id": 3,
+      "nombre": "Poseidon",
+      "de": "Mar"
+    },
+    {
+      "id": 4,
+      "nombre": "Hades",
+      "de": "Inframundo"
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "nombre": "Carlos",
+      "de": "tierra",
+      "id": 7
+    }
+  ]
+}

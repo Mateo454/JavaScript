@@ -1,0 +1,11 @@
+{
+    "cadena":"Mateo",
+   "numero" :"25",
+    "Boolean":"true",
+    "arreglo":["correr","programar","cocinar"],
+    "objeto":{
+        "twiter":"@MateoM",
+        "email":"teomarin97@gmail.com"
+    },
+    "nulo":null
+}

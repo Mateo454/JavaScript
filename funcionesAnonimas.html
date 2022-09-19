@@ -1,0 +1,46 @@
+<script>
+    //Expresiones regulares
+   let cadena = " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+
+   let expReg = new RegExp("simply","");
+   let expReg2 = /Ipsum/ig;
+   
+
+   console.log(expReg.test(cadena));
+   console.log(expReg2.exec(cadena));
+   //Funciones anonimas autoejecutables
+   (function(){
+       console.log("Mi Primer IIFE")
+   })();
+
+   (function(d,w,c){
+       console.log("Mi segunda IIFE")
+       console.log(d);
+       console.log(w);
+       c.log("console.log abreviado")
+   })(document,window,console);
+
+   //Formas de escribior funciones anonimas autoejecutables
+   //Clasica
+
+   (function(){
+    console.log('V clasica')
+   })();
+
+   //Crockford (JavaScript the good parts)
+   ((function(){
+    console.log(`version Crockford`)
+   })());
+
+   //Unaria
+   +function(){
+    console.log('V Unaria')
+   }();
+
+   //Version faceboock
+   !function(){
+    console.log("Version faceboock")
+   }();
+
+   
+   </script>
